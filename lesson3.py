@@ -25,10 +25,18 @@ class Bus(Car):
         print(f"Bus test {self.model}")
 
 
+class Truck(Car):
+    pass
 
-
+car_honda = Car("white", "Honda")
 bus_1 = Bus("green", "Isuzu", 40)
 print(bus_1.seats)
 print(bus_1.color)
 bus_1.drive("Bishkek")
 # bus_1.test_bus()
+truck_man = Truck("red", "Man")
+
+
+vehicles = [car_honda, bus_1, truck_man]
+for v in vehicles:
+    v.drive(location="Karakol")

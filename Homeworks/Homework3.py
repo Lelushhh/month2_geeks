@@ -69,8 +69,8 @@ class BestFriend(Friend):
         print(f"У нас с {self.friend_name} есть общее воспоминание: {self.shared_memory}.")
 
 
-classmate1 = Classmate("Нурэл", "06.10.2010", "студент", True, "9-Б", "Абидина")
-classmate2 = Classmate("Муслим", "13.09.2010", "студент", False, "9-Б", "Абидина")
+classmate1 = Classmate("Нурэл", "06.10.2010", "студент", False, "9-Б", "Абидином")
+classmate2 = Classmate("Муслим", "13.09.2010", "студент", False, "9-Б", "Абидином")
 
 friend1 = Friend("Алмаз", "12.07.1999", "инженер", True, "играть в шахматы", "Абидина")
 friend2 = Friend("Диана", "22.11.2000", "врач", True, "читать книги", "Абидина")

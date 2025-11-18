@@ -5,17 +5,25 @@ class Person:
         self.__occupation = occupation
         self.__higher_education = higher_education
 
-    def introduce(self):
-        edu_status = "да" if self.__higher_education else "нет"
-        print(f"Привет, меня зовут {self.name}. Моя профессия {self.__occupation}. "
-              f"У меня высшее образование: {edu_status}.")
-
-
     def get_occupation(self):
         return self.__occupation
 
+    def set_occupation(self, value):
+        self.__occupation = value
+
     def get_higher_education(self):
         return self.__higher_education
+
+    def set_higher_education(self, value):
+        self.__higher_education = value
+
+    def introduce(self):
+        edu_status = "да" if self.__higher_education else "нет"
+        print(
+            f"Привет, меня зовут {self.name}. "
+            f"Моя профессия {self.__occupation}. "
+            f"У меня высшее образование: {edu_status}."
+        )
 
 
 class Classmate(Person):
@@ -25,10 +33,13 @@ class Classmate(Person):
         self.classmate_name = classmate_name
 
     def introduce(self):
-        edu_status = "да" if self._Person__higher_education else "нет"
-        print(f"Привет, меня зовут {self.name}. Моя профессия {self._Person__occupation}. "
-              f"Я учился с {self.classmate_name} в группе {self.group_name}. "
-              f"У меня высшее образование: {edu_status}.")
+        edu_status = "да" if self.get_higher_education() else "нет"
+        print(
+            f"Привет, меня зовут {self.name}. "
+            f"Моя профессия {self.get_occupation()}. "
+            f"Я учился с {self.classmate_name} в группе {self.group_name}. "
+            f"У меня высшее образование: {edu_status}."
+        )
 
 
 class Friend(Person):
@@ -38,10 +49,14 @@ class Friend(Person):
         self.friend_name = friend_name
 
     def introduce(self):
-        edu_status = "да" if self._Person__higher_education else "нет"
-        print(f"Привет, меня зовут {self.name}. Моя профессия {self._Person__occupation}. "
-              f"Мое хобби {self.hobby}. Я друг {self.friend_name}. "
-              f"У меня высшее образование: {edu_status}.")
+        edu_status = "да" if self.get_higher_education() else "нет"
+        print(
+            f"Привет, меня зовут {self.name}. "
+            f"Моя профессия {self.get_occupation()}. "
+            f"Мое хобби {self.hobby}. "
+            f"Я друг {self.friend_name}. "
+            f"У меня высшее образование: {edu_status}."
+        )
 
 
 class BestFriend(Friend):
@@ -54,7 +69,6 @@ class BestFriend(Friend):
         print(f"У нас с {self.friend_name} есть общее воспоминание: {self.shared_memory}.")
 
 
-
 classmate1 = Classmate("Нурэл", "06.10.2010", "студент", True, "9-Б", "Абидина")
 classmate2 = Classmate("Муслим", "13.09.2010", "студент", False, "9-Б", "Абидина")
 
@@ -63,14 +77,8 @@ friend2 = Friend("Диана", "22.11.2000", "врач", True, "читать к�
 
 best_friend = BestFriend("Арман", "15.03.1998", "архитектор", True, "рисовать", "Абидином", "наша поездка в горы")
 
-
 classmate1.introduce()
 classmate2.introduce()
 friend1.introduce()
 friend2.introduce()
 best_friend.introduce()
-
-print("\nДоп. задание:")
-people = [classmate1, classmate2, friend1, friend2, best_friend]
-for person in people:
-    person.introduce()
